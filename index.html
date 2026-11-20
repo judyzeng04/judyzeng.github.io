@@ -593,7 +593,7 @@
         </p>
         <div class="btns">
           <!-- EDIT: put resume.pdf in the same folder -->
-          <a class="btn dark" href="resume.pdf">my resume ↗</a>
+          <a class="btn dark" href="resume.pdf" download="Judy-Zeng-Resume.pdf">my resume ↗</a>
           <a class="btn light" href="#contact">say hi</a>
         </div>
       </div>
@@ -867,8 +867,8 @@
       <div class="btns">
         <!-- EDIT: your real email + LinkedIn -->
         <button class="btn dark" id="copyEmail">copy my email ✉</button>
-        <a class="btn light" href="www.linkedin.com/in/judyzeng04 ↗</a>
-        <a class="btn light" href="resume.pdf">resume ↗</a>
+        <a class="btn light" href="https://www.linkedin.com/in/your-profile">linkedin ↗</a>
+        <a class="btn light" href="resume.pdf" download="Judy-Zeng-Resume.pdf">resume ↗</a>
       </div>
       <div class="sign">— Judy</div>
     </div>
@@ -903,7 +903,7 @@
   <!-- ===================== YOUR SETTINGS: edit these lists ===================== -->
   <script>
     // EDIT: your real email
-    const EMAIL = "judyzeng04@gmail.com";
+    const EMAIL = "you@example.com";
 
     // EDIT: words that rotate in the intro
     const ROTATE = ["strategy", "product", "technology", "people", "policy"];
@@ -1369,6 +1369,20 @@
         setTimeout(() => scrollTo({ top: 0, behavior: 'smooth' }), 250);
         setTimeout(() => top.classList.remove('fly'), 1200);
       };
+    })();
+
+    // photo: accept a few common file names
+    (() => {
+      const el = document.querySelector('.me .photo');
+      const names = ['me.jpg', 'me.jpeg', 'me.png', 'me.webp', 'Me.jpg', 'Me.jpeg', 'Me.png', 'me.JPG', 'me.JPEG', 'me.PNG', 'ME.JPG'];
+      const tryNext = i => {
+        if (i >= names.length) return;
+        const img = new Image();
+        img.onload = () => { el.style.backgroundImage = `url("${names[i]}")`; el.textContent = ''; };
+        img.onerror = () => tryNext(i + 1);
+        img.src = names[i];
+      };
+      tryNext(0);
     })();
 
     // copy email
