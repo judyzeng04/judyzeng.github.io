@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judy Zeng</title>
+  <meta name="description" content="Judy Zeng: statistics and political science grad, project management and analytics, based in Montréal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+  <!--
+    YOUR PHOTO: put a photo of yourself in the same folder, named me.jpg.
+    Until then, the shape on the front page shows a placeholder.
+  -->
+
+  <style>
+    :root {
+      --display: "Gloock", Georgia, serif;
+      --body: "Figtree", system-ui, sans-serif;
+      /* COLOURS: change these to restyle the site */
+      --paper:  #FBF3DC;   /* vanilla: page background */
+      --ink:    #4A2E22;   /* coco chip: text + outlines */
+      --soft:   #7a6255;
+      --teal:   #BFD8AF;   /* pistachio */
+      --deep:   #a8475a;   /* deeper strawberry: links */
+      --cobalt: #4A2E22;   /* coco chip: dark cards */
+      --sun:    #F6A5B4;   /* strawberry cream */
+      --tomato: #e27d92;   /* deeper strawberry: small accents */
+      --plum:   #6e3a52;   /* dark plum */
+      --line:   #eadfc2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body); font-size: 18px; line-height: 1.7;
+      color: var(--ink); background: var(--paper); overflow-x: hidden;
+    }
+    a { color: var(--deep); text-underline-offset: 3px; }
+    a:hover { color: var(--tomato); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 26px; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.1; }
+    .hand { font-family: "Nanum Pen Script", cursive; line-height: 1; }
+    .hl { background: linear-gradient(transparent 55%, var(--sun) 55%, var(--sun) 92%, transparent 92%); padding: 0 3px; }
+
+    /* ---------- NAV ---------- */
+    nav { padding: 24px 0; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    nav .logo { font-family: var(--display); font-size: 22px; color: var(--ink); text-decoration: none; }
+    nav .logo span { color: var(--tomato); }
+    nav ul { list-style: none; display: flex; gap: 6px; flex-wrap: wrap; }
+    nav ul a {
+      display: block; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 15px;
+      padding: 7px 15px; border-radius: 999px; border: 2px solid transparent; transition: all .2s;
+    }
+    nav ul a:hover { border-color: var(--ink); color: var(--ink); background: var(--sun); }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative; background: var(--teal); margin: 0 14px; border-radius: 36px;
+      padding: 80px 0 96px; overflow: hidden; border: 3px solid var(--ink);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ink); color: var(--paper); font-weight: 700; font-size: 15px;
+      padding: 7px 16px; border-radius: 999px; margin-bottom: 24px;
+    }
+    .badge i { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); display: block; }
+    .hero h1 { font-size: clamp(56px, 9.5vw, 112px); position: relative; display: inline-block; }
+    .hero h1 em { font-style: normal; color: var(--paper); -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill; }
+    .hero h1 svg { position: absolute; left: 3%; bottom: -16px; width: 94%; height: 26px; }
+    .hero p { font-size: 21px; margin-top: 30px; max-width: 540px; }
+    .btns { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; text-decoration: none; font-weight: 800; font-size: 16px;
+      padding: 13px 24px; border-radius: 14px; border: 2.5px solid var(--ink); transition: transform .15s;
+    }
+    .btn.dark { background: var(--ink); color: var(--paper); }
+    .btn.light { background: var(--paper); color: var(--ink); }
+    .btn:hover { transform: rotate(-2deg) scale(1.04); }
+    .btn.dark:hover { color: var(--sun); }
+    .btn.light:hover { color: var(--ink); background: var(--sun); }
+
+    /* photo in a playful blob shape */
+    .me { position: relative; justify-self: center; width: 320px; height: 360px; }
+    .me .back, .me .photo {
+      position: absolute; inset: 0; border: 3px solid var(--ink);
+      border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
+      animation: morph 10s ease-in-out infinite;
+    }
+    .me .back { background: var(--sun); transform: translate(18px, 18px); }
+    .me .photo {
+      background: var(--paper) url("me.jpg") center/cover;
+      display: grid; place-items: center; color: var(--soft); font-weight: 700;
+    }
+    @keyframes morph {
+      0%, 100% { border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%; }
+      50%      { border-radius: 45% 55% 42% 58% / 55% 45% 55% 45%; }
+    }
+    .me-note { position: absolute; left: -96px; top: 10px; font-size: 32px; transform: rotate(-8deg); }
+    .me-note svg { display: block; width: 80px; height: 44px; margin: 2px 0 0 34px; }
+
+    /* doodles */
+    .doodle { position: absolute; pointer-events: none; animation: wiggle 5s ease-in-out infinite; }
+    .d1 { top: 36px; right: 44%; width: 46px; }
+    .d2 { bottom: 34px; left: 5%; width: 96px; animation-delay: -2s; }
+    .d3 { top: 46px; right: 5%; width: 40px; animation-delay: -3s; }
+    @keyframes wiggle { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg) translateY(-4px); } }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 100px 0; }
+    .head { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; margin-bottom: 44px; }
+    .head h2 { font-size: clamp(40px, 5.5vw, 60px); }
+    .head .hand { font-size: 32px; color: var(--tomato); transform: rotate(-4deg); padding-bottom: 6px; }
+
+    /* shared card style (projects, hobbies, "right now") */
+    .card {
+      border: 2.5px solid var(--ink); border-radius: 26px; padding: 28px;
+      background: var(--bg, #fff); color: var(--fg, var(--ink));
+      transition: transform .25s, box-shadow .25s;
+    }
+    .card:hover { transform: translateY(-6px) rotate(-1deg); box-shadow: 0 14px 0 -4px var(--ink); }
+
+    /* about */
+    .about { display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: start; }
+    .about p { font-size: 19px; }
+    .about p + p { margin-top: 18px; }
+    .now { --bg: var(--cobalt); --fg: var(--paper); }
+    .now h3 { font-size: 28px; margin-bottom: 10px; }
+    .now ul { list-style: none; font-size: 17px; }
+    .now li { padding: 7px 0; border-bottom: 1.5px solid rgba(255,247,236,.25); }
+    .now li:last-child { border: none; }
+    .now b { color: var(--sun); }
+
+    /* work */
+    .job { display: grid; grid-template-columns: 24px 180px 1fr; gap: 18px; padding: 22px 0; border-bottom: 2px solid var(--line); }
+    .job:first-child { border-top: 2px solid var(--line); }
+    .job .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--c); border: 2.5px solid var(--ink); margin-top: 8px; }
+    .job .when { color: var(--soft); font-size: 15px; padding-top: 4px; font-weight: 700; white-space: nowrap; }
+    .job h3 { font-size: 22px; }
+    .job .org { font-weight: 800; font-size: 15px; color: var(--soft); }
+    .job p { margin-top: 4px; color: var(--soft); }
+
+    /* projects */
+    .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
+    .proj { display: flex; flex-direction: column; min-height: 290px; }
+    .proj .tag {
+      align-self: flex-start; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 999px; border: 2px solid var(--ink); background: var(--paper); color: var(--ink);
+      margin-bottom: auto;
+    }
+    .proj h3 { font-size: 24px; margin: 28px 0 10px; }
+    .proj p { font-size: 16.5px; }
+    .proj.soon { background: transparent; border-style: dashed; }
+    .proj.soon:hover { box-shadow: none; }
+
+    /* hobbies */
+    .h-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .hob { display: flex; flex-direction: column; min-height: 340px; padding: 24px; }
+    .hob svg { width: 100%; height: 120px; margin-bottom: 14px; }
+    .hob h3 { font-size: 26px; }
+    .hob p { margin-top: 8px; font-size: 15.5px; }
+    .big { font-family: var(--display); font-size: 54px; line-height: 1; margin-top: 4px; }
+    .big small { font-family: var(--body); font-size: 16px; font-weight: 700; display: block; margin-top: 6px; }
+    .hob .next { margin-top: auto; padding-top: 14px; font-weight: 700; font-size: 15px; }
+    .hob .next span { font-weight: 400; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .vinyl { animation: spin 6s linear infinite; transform-origin: 60px 60px; }
+    .plane { animation: fly 6s ease-in-out infinite; }
+    @keyframes fly { 0%,100% { transform: translate(0,0) rotate(-8deg); } 50% { transform: translate(14px,-10px) rotate(4deg); } }
+    .route { stroke-dasharray: 6 8; animation: dash 3s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -56; } }
+    .steam { animation: rise 2.6s ease-in-out infinite; }
+    .steam.two { animation-delay: -1.3s; }
+    @keyframes rise { 0% { opacity: 0; transform: translateY(8px); } 50% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }
+
+    /* ---------- CONTACT ---------- */
+    .contact-box {
+      background: var(--sun); border: 3px solid var(--ink); border-radius: 36px;
+      margin: 0 14px; padding: 90px 26px; text-align: center; position: relative; overflow: hidden;
+    }
+    .contact-box h2 { font-size: clamp(54px, 9vw, 104px); }
+    .contact-box p { font-size: 20px; margin-top: 14px; }
+    .contact-box .btns { justify-content: center; }
+    .sign { font-family: "Nanum Pen Script", cursive; font-size: 50px; margin-top: 36px; display: inline-block; transform: rotate(-5deg); }
+    footer { text-align: center; color: var(--soft); font-size: 14px; padding: 34px 0 40px; }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    .r {
+      opacity: 0; translate: 0 24px; filter: blur(2px);
+      transition: opacity .7s ease, translate .7s cubic-bezier(.2,.7,.2,1), filter .7s ease, transform .25s, box-shadow .25s;
+    }
+    .r.in { opacity: 1; translate: 0 0; filter: none; }
+
+
+    /* ---------- INTERACTIVE BITS ---------- */
+    /* rotating word */
+    .rotline { font-family: var(--display); font-size: clamp(26px, 3.4vw, 36px); margin-top: 30px; }
+    .rot { display: inline-block; color: var(--ink); background: var(--sun); border: 2.5px solid var(--ink);
+           border-radius: 12px; padding: 0 12px; transition: opacity .35s, transform .35s; }
+    .rot.out { opacity: 0; transform: translateY(-12px); }
+    .hero .rotline + p { margin-top: 18px; }
+
+    /* fact generator */
+    .side { display: flex; flex-direction: column; gap: 22px; }
+    .fact { --bg: var(--sun); }
+    .fact h3 { font-size: 24px; margin-bottom: 8px; }
+    .fact p { font-size: 17px; min-height: 84px; transition: opacity .25s; }
+    .fact button {
+      margin-top: 14px; font: 800 15px var(--body); cursor: pointer;
+      background: var(--ink); color: var(--paper); border: 2.5px solid var(--ink); border-radius: 12px; padding: 10px 18px;
+      transition: transform .15s;
+    }
+    .fact button:hover { transform: rotate(-2deg) scale(1.04); }
+
+    /* travel card opens the map */
+    .hob.travel { cursor: pointer; }
+    .map-toggle {
+      margin-top: auto; align-self: flex-start; font: 800 15px var(--body); cursor: pointer;
+      background: var(--paper); color: var(--ink); border: 2.5px solid var(--ink); border-radius: 12px; padding: 9px 16px;
+    }
+    .map-toggle:hover { background: var(--sun); }
+    .hob.travel .next { margin-top: 10px; padding-top: 0; margin-bottom: 14px; }
+    #mapwrap, .panelwrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .6s ease; }
+    #mapwrap.open, .panelwrap.open { grid-template-rows: 1fr; }
+    #mapwrap > div, .panelwrap > div { overflow: hidden; }
+    .mini-btn {
+      margin-top: 12px; align-self: flex-start; font: 800 14px var(--body); cursor: pointer;
+      background: var(--paper); color: var(--ink); border: 2.5px solid var(--ink); border-radius: 12px; padding: 8px 14px;
+      transition: transform .15s;
+    }
+    .mini-btn:hover { background: var(--ink); color: var(--paper); }
+    .cuisine {
+      margin-top: auto; font-family: var(--display); font-size: 21px; line-height: 1.2; min-height: 52px;
+      display: flex; align-items: flex-end;
+    }
+    .cuisine.spinning { opacity: .6; }
+    .foodcard { --bg: var(--sun); margin-top: 22px; padding: 30px; }
+    .foodcard:hover { transform: none; box-shadow: none; }
+    .food-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 26px; align-items: stretch; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips button {
+      font: 700 15px var(--body); cursor: pointer; background: var(--paper); color: var(--ink);
+      border: 2px solid var(--ink); border-radius: 999px; padding: 6px 14px; transition: transform .15s, background .15s;
+    }
+    .chips button:hover { background: var(--teal); }
+    .chips button.on { background: var(--ink); color: var(--paper); }
+    .pick {
+      margin-top: 18px; background: var(--paper); border: 2.5px solid var(--ink); border-radius: 18px; padding: 20px 22px;
+      display: flex; gap: 18px; align-items: center; min-height: 118px; transition: opacity .2s;
+    }
+    .pick .num { font-family: var(--display); font-size: 46px; line-height: 1; color: var(--tomato); min-width: 58px; }
+    .pick .where { font-family: var(--display); font-size: 28px; line-height: 1.1; margin-top: 4px; }
+    .pick .hood { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+    .pick .why { margin-top: 6px; font-size: 16px; }
+    .stay-in { border: 2.5px dashed var(--ink); border-radius: 18px; padding: 20px 22px; display: flex; flex-direction: column; }
+    .stay-in h4 { font-family: var(--display); font-weight: 400; font-size: 22px; }
+    .stay-in p { font-size: 15px; margin-top: 4px; }
+    @media (max-width: 760px) { .food-grid { grid-template-columns: 1fr; } }
+    .langs { --bg: var(--teal); margin-top: 28px; padding: 24px 26px; }
+    .langs:hover { transform: none; box-shadow: none; }
+    .lang-top { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .lang-top h3 { font-size: 24px; }
+    .lang-tabs { display: flex; gap: 6px; }
+    .lang-tabs button {
+      font: 700 14px var(--body); cursor: pointer; background: var(--paper); color: var(--ink);
+      border: 2px solid var(--ink); border-radius: 999px; padding: 5px 13px;
+    }
+    .lang-tabs button:hover { background: var(--sun); }
+    .lang-tabs button.on { background: var(--ink); color: var(--paper); }
+    .lang-body { margin-top: 14px; min-height: 92px; transition: opacity .2s; }
+    .lang-body .say { font-family: var(--display); font-size: 22px; line-height: 1.3; }
+    .lang-body .say:lang(zh) { font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-weight: 600; }
+    .lang-body .sub { font-size: 14.5px; margin-top: 6px; opacity: .8; }
+    .lang-body .lvl { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+                      background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; padding: 2px 10px; margin-top: 10px; }
+    .setcard { --bg: var(--teal); margin-top: 22px; padding: 30px; }
+    .setcard:hover { transform: none; box-shadow: none; }
+    .setcard a { display: inline-block; margin-top: 12px; font-weight: 800; color: var(--ink); }
+    .video { position: relative; aspect-ratio: 16 / 9; border: 2.5px solid var(--ink); border-radius: 16px; overflow: hidden; background: var(--ink); }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    #map circle.pin.not { fill: #8a6656; stroke: var(--cobalt); stroke-width: 1; }
+    .places { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .places b { width: 100%; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; opacity: .75; margin-top: 8px; }
+    .places span { background: var(--paper); color: var(--ink); border-radius: 999px; padding: 3px 12px; font-size: 14px; font-weight: 700; }
+    #map circle.pin { fill: var(--teal); stroke: var(--paper); stroke-width: 1.5; }
+    #map circle.pin:hover, #map circle.pin.not:hover { fill: var(--sun); }
+
+    /* travel map */
+    .mapcard { --bg: var(--cobalt); --fg: var(--paper); margin-top: 22px; padding: 30px; }
+    body.dark .mapcard { --bg: #3d281e; }
+    .mapcard:hover { transform: none; box-shadow: none; }
+    .map-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+    .map-top h3 { font-size: 30px; }
+    .map-top span { font-size: 15px; opacity: .8; }
+    #map { position: relative; width: 100%; }
+    #map svg { width: 100%; height: auto; display: block; }
+    #map path { fill: #6b4a3c; stroke: var(--cobalt); stroke-width: .5; transition: fill .2s; }
+    #map path.been { fill: var(--teal); }
+    #map path:hover { fill: var(--sun); }
+    #map .msg { padding: 40px 0; text-align: center; opacity: .8; }
+    .tip {
+      position: absolute; pointer-events: none; background: var(--paper); color: var(--ink);
+      border: 2px solid var(--ink); border-radius: 10px; padding: 4px 10px; font-size: 14px; font-weight: 700;
+      white-space: nowrap; opacity: 0; transition: opacity .15s; transform: translate(-50%, -130%);
+    }
+    .legend { display: flex; gap: 18px; font-size: 14px; margin-top: 12px; opacity: .9; }
+    .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+    /* copy email + toast */
+    .toast {
+      position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px); opacity: 0;
+      background: var(--ink); color: var(--paper); padding: 12px 22px; border-radius: 999px; font-weight: 700;
+      transition: all .3s; z-index: 100; pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    button.btn { cursor: pointer; font-family: var(--body); }
+
+    /* dark mode */
+    .theme-btn {
+      cursor: pointer; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--ink);
+      background: var(--paper); color: var(--ink); font-size: 18px; margin-left: 6px; transition: transform .3s;
+    }
+    .theme-btn:hover { transform: rotate(25deg); }
+    .hero, .contact-box { color: var(--ink); }
+    body { transition: background .4s, color .4s; }
+    body.dark { background: #2b1b14; color: var(--paper); --soft: #cdbcaa; --line: #4d382c; }
+    body.dark a { color: var(--sun); }
+    body.dark nav .logo, body.dark nav ul a { color: var(--paper); }
+    body.dark nav ul a:hover { color: var(--ink); }
+    body.dark .theme-btn { background: #2b1b14; color: var(--paper); border-color: var(--paper); }
+    body.dark .job .dot { border-color: var(--paper); }
+    body.dark .proj.soon { color: var(--paper); border-color: var(--paper); }
+    body.dark .card { border-color: var(--paper); }
+    body.dark .hl { color: var(--ink); background: var(--sun); border-radius: 4px; }
+
+    @media (max-width: 900px) { .side { margin-top: 6px; } }
+
+
+    /* ---------- PARTY MODE ---------- */
+    .party-btn {
+      position: fixed; left: 16px; bottom: 16px; z-index: 50; cursor: pointer;
+      display: flex; align-items: center; gap: 8px; background: none; border: none; padding: 0;
+      font: 700 13px var(--body); color: var(--ink);
+    }
+    .party-btn .dot {
+      width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 15px;
+      background: var(--paper); border: 2px solid var(--ink); transition: background .2s, rotate .4s;
+    }
+    .party-btn .label {
+      background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; padding: 4px 10px;
+      opacity: 0; translate: -6px 0; transition: opacity .25s, translate .25s; white-space: nowrap;
+    }
+    .party-btn:hover .dot, .party-btn:focus-visible .dot { background: var(--sun); rotate: 90deg; }
+    .party-btn:hover .label, .party-btn:focus-visible .label { opacity: 1; translate: 0 0; }
+    .party-btn { opacity: .6; transition: opacity .2s; }
+    .party-btn:hover, .party-btn:focus-visible, body.party .party-btn { opacity: 1; }
+    body.party .party-btn .dot { background: var(--ink); color: var(--sun); }
+    body.dark:not(.party) .party-btn { color: var(--paper); }
+    body.dark:not(.party) .party-btn .dot, body.dark:not(.party) .party-btn .label { background: #2b1b14; border-color: var(--paper); }
+
+    /* party background */
+    body.party {
+      background: linear-gradient(120deg, #F6A5B4, #f7d77a, #BFD8AF, #a9d3f3, #d9b8ec, #F6A5B4);
+      background-size: 400% 400%; animation: partybg 14s ease infinite;
+      color: var(--ink); --soft: #5a4237; --line: rgba(74,46,34,.25);
+    }
+    @keyframes partybg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    body.party a { color: var(--ink); }
+    body.party nav .logo, body.party nav ul a { color: var(--ink); }
+    body.party .job .dot, body.party .card { border-color: var(--ink); }
+    body.party .proj.soon { color: var(--ink); border-color: var(--ink); }
+    body.party .theme-btn { background: var(--paper); color: var(--ink); border-color: var(--ink); }
+
+    #partyLayer { position: absolute; top: 0; left: 0; right: 0; height: 260px; pointer-events: none; z-index: 40; display: none; overflow: hidden; }
+    body.party #partyLayer { display: block; }
+    .garland { position: absolute; left: -2%; width: 104%; height: 120px; }
+    .garland svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .flag {
+      position: absolute; width: 26px; height: 32px; clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top center; animation: sway 2.4s ease-in-out infinite;
+    }
+    @keyframes sway { 0%,100% { rotate: -7deg; } 50% { rotate: 7deg; } }
+
+    .disco { position: absolute; left: 50%; top: 0; transform-origin: top center; animation: swing 3s ease-in-out infinite; }
+    .disco .string { width: 2px; height: 70px; background: var(--ink); margin: 0 auto; }
+    .disco .ball {
+      width: 58px; height: 58px; border-radius: 50%; border: 2px solid var(--ink); margin-left: -28px;
+      background:
+        repeating-linear-gradient(0deg, transparent 0 8px, rgba(74,46,34,.35) 8px 9px),
+        repeating-linear-gradient(90deg, transparent 0 8px, rgba(74,46,34,.35) 8px 9px),
+        radial-gradient(circle at 35% 30%, #fff 0 12%, #e9e2d6 30%, #a9a39a 75%);
+      background-size: 9px 9px, 9px 9px, 100% 100%;
+      animation: glint 1.2s linear infinite;
+    }
+    @keyframes swing { 0%,100% { rotate: -6deg; } 50% { rotate: 6deg; } }
+    @keyframes glint { to { background-position: 9px 0, 0 9px, 0 0; } }
+
+    #confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 45; display: none; }
+    body.party #confetti { display: block; }
+
+    body.party .card { animation: bob 2.2s ease-in-out infinite; }
+    body.party .card:nth-child(even) { animation-delay: -1.1s; }
+    @keyframes bob { 0%,100% { rotate: -1.2deg; } 50% { rotate: 1.2deg; } }
+    body.party .hero h1 em { animation: hue 2s linear infinite; }
+    @keyframes hue { 0% { color: var(--paper); } 33% { color: var(--sun); } 66% { color: #fff; } }
+    body.party .sign::after { content: " 🎉"; }
+
+    /* reading progress bar */
+    .progress {
+      position: fixed; top: 0; left: 0; height: 5px; width: 100%; z-index: 70; pointer-events: none;
+      background: linear-gradient(90deg, var(--tomato), var(--sun));
+      transform-origin: left; transform: scaleX(0);
+    }
+
+    /* back to top: a paper plane */
+    .to-top {
+      position: fixed; right: 18px; bottom: 18px; z-index: 50; cursor: pointer;
+      display: flex; align-items: center; gap: 8px; padding: 6px 14px 6px 8px;
+      background: var(--teal); color: var(--ink); border: 2.5px solid var(--ink); border-radius: 999px;
+      font: 800 13px var(--body);
+      opacity: 0; translate: 0 20px; pointer-events: none; transition: opacity .3s, translate .3s, background .2s;
+    }
+    .to-top.show { opacity: 1; translate: 0 0; pointer-events: auto; }
+    .to-top:hover { background: var(--sun); }
+    .to-top svg { width: 30px; height: 30px; transition: transform .3s; }
+    .to-top:hover svg { transform: translate(2px, -3px) rotate(-8deg); }
+    .to-top.fly svg { animation: takeoff .7s ease-in forwards; }
+    @keyframes takeoff {
+      0% { transform: none; }
+      30% { transform: translate(-4px, 4px) rotate(4deg); }
+      100% { transform: translate(60px, -140px) rotate(-20deg) scale(.6); opacity: 0; }
+    }
+    @media (max-width: 540px) { .to-top span { display: none; } .to-top { padding: 6px; } }
+
+    /* skills chart */
+    .skillcard { --bg: #fffaf0; padding: 30px; }
+    .skillcard:hover, .oddscard:hover { transform: none; box-shadow: none; }
+    body.dark .skillcard, body.dark .oddscard { color: var(--ink); }
+    .chart-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+    .chart-head h3 { font-size: 24px; }
+    .chart-head span { font-size: 14px; color: #7a6255; }
+    .skills { display: grid; gap: 6px; }
+    .skill {
+      display: grid; grid-template-columns: 230px 1fr; align-items: center; gap: 14px;
+      background: none; border: none; padding: 4px 6px; border-radius: 10px; cursor: pointer; text-align: left;
+      font: 600 15px var(--body); color: var(--ink);
+    }
+    .skill:hover, .skill:focus-visible, .skill.on { background: rgba(217,96,126,.08); outline: none; }
+    .track {
+      position: relative; height: 24px;
+      background-image: linear-gradient(to right, #e9dcc6 1px, transparent 1px);
+      background-size: 25% 100%; border-left: 1px solid #cdbba5;
+    }
+    .bar {
+      position: absolute; left: 0; top: 4px; height: 16px; width: 0; background: #d9607e;
+      border-radius: 0 4px 4px 0; transition: width .9s cubic-bezier(.2,.7,.2,1);
+    }
+    .val { position: absolute; top: 2px; font-size: 14px; font-weight: 700; color: var(--ink); white-space: nowrap; transition: left .9s cubic-bezier(.2,.7,.2,1); }
+    .axis { display: grid; grid-template-columns: 230px 1fr; gap: 14px; padding: 0 6px; margin-top: 4px; }
+    .axis div { display: flex; justify-content: space-between; font-size: 12px; color: #7a6255; }
+    .axis-title { text-align: right; font-size: 12px; color: #7a6255; margin-top: 2px; padding-right: 6px; }
+    .skill-detail { margin-top: 18px; padding: 14px 18px; border-radius: 14px; background: var(--paper); border: 2px solid var(--ink); font-size: 15.5px; min-height: 54px; }
+    .skill-detail b { font-family: var(--display); font-weight: 400; font-size: 19px; }
+    .skill-detail ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 6px; }
+    .skill-detail li::before { content: "● "; color: #d9607e; }
+    @media (max-width: 640px) {
+      .skill, .axis { grid-template-columns: 1fr; gap: 4px; }
+      .axis > span { display: none; }
+    }
+
+    /* odds calculator */
+    .oddscard { --bg: var(--teal); padding: 30px; }
+    .odds-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 30px; align-items: start; }
+    .odds-intro { font-size: 17px; margin-bottom: 14px; }
+    .qs { display: grid; gap: 10px; }
+    .q {
+      display: flex; justify-content: space-between; align-items: center; gap: 14px;
+      background: var(--paper); border: 2px solid var(--ink); border-radius: 14px; padding: 10px 14px; font-size: 15.5px;
+    }
+    .yn { display: flex; gap: 6px; flex-shrink: 0; }
+    .yn button {
+      font: 800 13px var(--body); cursor: pointer; border: 2px solid var(--ink); border-radius: 999px;
+      padding: 4px 12px; background: var(--paper); color: var(--ink);
+    }
+    .yn button:hover { background: var(--sun); }
+    .yn button.on { background: var(--ink); color: var(--paper); }
+    .odds-result { background: var(--paper); border: 2.5px solid var(--ink); border-radius: 20px; padding: 24px; text-align: center; position: sticky; top: 20px; }
+    .odds-label { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+    .odds-num { font-family: var(--display); font-size: 84px; line-height: 1; margin: 8px 0 12px; }
+    .odds-meter { height: 14px; border-radius: 999px; border: 2px solid var(--ink); overflow: hidden; background: #fff; }
+    .odds-meter div { height: 100%; width: 50%; background: #d9607e; transition: width .6s cubic-bezier(.2,.7,.2,1); }
+    .odds-verdict { font-family: var(--display); font-size: 21px; line-height: 1.25; margin-top: 16px; min-height: 52px; }
+    .odds-fine { font-size: 12px; opacity: .65; margin-top: 8px; }
+    .odds-fine + .odds-fine { margin-top: 2px; }
+    @media (max-width: 820px) { .odds-grid { grid-template-columns: 1fr; } .odds-result { position: static; } }
+
+    /* ---------- LOTUS RAIN MODE ---------- */
+    .name-wrap { position: relative; display: inline-block; }
+    #nameBtn { cursor: pointer; }
+    #nameBtn:focus-visible { outline: 3px dashed var(--ink); outline-offset: 6px; border-radius: 8px; }
+    .name-tag {
+      position: absolute; left: calc(100% + 12px); top: 38%; translate: 0 6px; font-size: 14px; opacity: 0; pointer-events: none;
+      font: 700 14px var(--body); color: var(--ink); background: var(--paper); border: 2px solid var(--ink);
+      border-radius: 999px; padding: 3px 12px; white-space: nowrap; transition: opacity .25s, translate .25s;
+    }
+    #nameBtn:hover + .name-tag, #nameBtn:focus-visible + .name-tag { opacity: 1; translate: 0 0; }
+    #rain { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 46; display: none; }
+    body.rain #rain { display: block; }
+    .rain-veil {
+      position: fixed; inset: 0; pointer-events: none; z-index: 44; opacity: 0; transition: opacity 1.2s;
+      background: linear-gradient(180deg, rgba(120,140,165,.22), rgba(246,165,180,.10));
+    }
+    body.rain .rain-veil { opacity: 1; }
+    .rain-note {
+      position: fixed; left: 50%; bottom: 22px; translate: -50% 30px; opacity: 0; z-index: 60; pointer-events: none;
+      background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: 999px;
+      padding: 8px 18px; font: 700 14px var(--body); white-space: nowrap; transition: opacity .4s, translate .4s;
+    }
+    .rain-note.show { opacity: 1; translate: -50% 0; }
+    @media (max-width: 540px) { .rain-note { white-space: normal; width: 86%; text-align: center; } .name-tag { left: 0; top: auto; bottom: -30px; } }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 900px) {
+      .hero-grid, .about { grid-template-columns: 1fr; }
+      .me-note, .d1 { display: none; }
+      .me { width: 260px; height: 290px; }
+      .h-grid { grid-template-columns: 1fr 1fr; }
+      .job { grid-template-columns: 24px 1fr; }
+      .job .when, .job > div:last-child { grid-column: 2; }
+    }
+    @media (max-width: 540px) {
+      .h-grid { grid-template-columns: 1fr; }
+      section { padding: 76px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .r { opacity: 1 !important; translate: none !important; filter: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <button class="to-top" id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 22 L34 8 L26 34 L20 24 Z M20 24 L34 8" fill="#FBF3DC" stroke="#4A2E22" stroke-width="2.2" stroke-linejoin="round"/></svg>
+    <span>back to top</span>
+  </button>
+  <div id="partyLayer" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <div class="rain-veil" aria-hidden="true"></div>
+  <div class="rain-note" id="rainNote">雨荷 means “lotus in the rain” · click “Judy.” again to stop</div>
+  <button class="party-btn" id="partyBtn" aria-pressed="false" aria-label="Party mode">
+    <span class="dot">✦</span><span class="label">psst… click for a surprise</span>
+  </button>
+
+  <nav>
+    <div class="wrap">
+      <a class="logo" href="#">Judy Zeng<span>.</span></a>
+      <ul>
+        <li><a href="#about">about</a></li>
+        <li><a href="#work">work</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#life">life</a></li>
+        <li><a href="#contact">say hi</a></li>
+        <li><button class="theme-btn" id="themeBtn" aria-label="Switch light/dark mode">☾</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <svg class="doodle d1" viewBox="0 0 50 50" aria-hidden="true"><path d="M25 4 L29 20 L46 25 L29 30 L25 46 L21 30 L4 25 L21 20 Z" fill="#F6A5B4" stroke="#4A2E22" stroke-width="2.5" stroke-linejoin="round"/></svg>
+    <svg class="doodle d2" viewBox="0 0 100 30" aria-hidden="true"><path d="M4 18 q 12 -16 24 0 t 24 0 t 24 0 t 22 0" fill="none" stroke="#4A2E22" stroke-width="4" stroke-linecap="round"/></svg>
+    <svg class="doodle d3" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 v32 M4 20 h32 M9 9 l22 22 M31 9 l-22 22" stroke="#e27d92" stroke-width="3.5" stroke-linecap="round"/></svg>
+
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="badge"><i></i> open to new-grad roles for 2027</span>
+        <h1>Hi, I'm <span class="name-wrap"><em id="nameBtn" tabindex="0" role="button" aria-label="Judy: click for lotus rain mode">Judy.</em><span class="name-tag" aria-hidden="true">曾雨荷 · click me</span></span>
+          <svg viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M6 16 C 70 6, 130 22, 190 11 S 272 8, 296 15" fill="none" stroke="#F6A5B4" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </h1>
+        <!-- EDIT: the rotating words are listed in the script at the bottom (ROTATE) -->
+        <div class="rotline">I work across <span class="rot" id="rot">strategy</span></div>
+        <p>
+          I'm an Associate Project Manager Intern at SAP in Montréal. I'm happiest when I'm figuring
+          out why something isn't working, and who needs to be in the room to fix it.
+        </p>
+        <div class="btns">
+          <!-- EDIT: put resume.pdf in the same folder -->
+          <a class="btn dark" href="resume.pdf">my resume ↗</a>
+          <a class="btn light" href="#contact">say hi</a>
+        </div>
+      </div>
+
+      <div class="me">
+        <div class="me-note hand" aria-hidden="true">that's me!
+          <svg viewBox="0 0 80 44"><path d="M4 6 C 30 2, 56 14, 72 36 M72 36 l-13 -2 M72 36 l-2 -13" fill="none" stroke="#4A2E22" stroke-width="2.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="back"></div>
+        <div class="photo">your photo here</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+      <div class="wrap">
+        <div class="head reveal"><h2>A bit about me</h2><span class="hand">the short version</span></div>
+        <div class="about reveal">
+          <div>
+            <!-- EDIT: rewrite in your own words -->
+            <p>
+              I studied statistics and political science at McGill, which mostly taught me that
+              <span class="hl">numbers tell you a lot, and people tell you the rest</span>. I took that
+              to the tech side of banking at CIBC, and now to project management at SAP.
+            </p>
+            <p>
+              On most teams, I end up as the go-between, making sure the people asking for something and
+              the people building it actually understand each other. I pick things up fast, and I'm as
+              comfortable in the details as I am in the big picture. I've led teams of 20 at McMUN and
+              helped present youth policy at the United Nations.
+            </p>
+            <p>
+              I'm also just very curious. I'm always learning something new, and I like coming at
+              problems from a creative angle, especially the ones without an obvious answer.
+            </p>
+
+            <!-- EDIT: greetings are in LANGS in the script at the bottom -->
+            <div class="card langs">
+              <div class="lang-top">
+                <h3>I speak…</h3>
+                <div class="lang-tabs" role="tablist" id="langTabs"></div>
+              </div>
+              <div class="lang-body" id="langBody"></div>
+            </div>
+          </div>
+          <div class="side">
+          <!-- EDIT: update whenever you like -->
+          <div class="card now">
+            <h3>Right now</h3>
+            <ul>
+              <li><b>Working on:</b> projects at SAP</li>
+              <li><b>Reading:</b> <i>Crying in H Mart</i> by Michelle Zauner</li>
+              <li><b>Listening to:</b> The 1975</li>
+              <li><b>Watching:</b> <i>Sunrise on the Reaping</i></li>
+            </ul>
+          </div>
+          <!-- EDIT: your facts are listed in the script at the bottom (FACTS) -->
+          <div class="card fact">
+            <h3>Random fact generator</h3>
+            <p id="factText">I collect niche facts. Press the button and I'll share one.</p>
+            <button id="factBtn">Hit me with a fact ↻</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WORK ===================== -->
+    <section id="work" style="padding-top: 10px;">
+      <div class="wrap">
+        <div class="head reveal"><h2>Where I've worked</h2></div>
+        <div class="reveal">
+          <div class="job" style="--c: var(--tomato)">
+            <span class="dot"></span><div class="when">Jun 2026 – now</div>
+            <div><h3>Associate Project Manager Intern</h3><div class="org">SAP · Professional Services, Customer Engagement &amp; Adoption · Montréal</div><p>I help keep client implementations on track across the public and private sectors, dig into the delivery data to catch problems early, and I'm always looking for parts of my day I can automate. I also lead the Montreal Intern Committee, which means planning the office's socials, networking events and lunch-and-learns.</p></div>
+          </div>
+          <div class="job" style="--c: var(--cobalt)">
+            <span class="dot"></span><div class="when">May 2024 – Aug 2024</div>
+            <div><h3>Junior Business Systems Analyst, Financial Crimes Technology</h3><div class="org">CIBC · Toronto</div><p>Helped keep the bank's financial crimes systems airtight, running quarterly access reviews for 100+ users with 100% regulatory compliance.</p></div>
+          </div>
+          <div class="job" style="--c: var(--teal)">
+            <span class="dot"></span><div class="when">May 2023 – Aug 2023</div>
+            <div><h3>Business Analyst Co-op, Global Derivatives Technology</h3><div class="org">CIBC · Toronto</div><p>Kept the data behind global derivatives flowing, maintaining the SQL databases and reporting tools teams used to make decisions, and was named an Exceptional Student, an honour given to just 10% of CIBC co-ops.</p></div>
+          </div>
+          <div class="job" style="--c: var(--sun)">
+            <span class="dot"></span><div class="when">2022 – 2026</div>
+            <div><h3>B.A. &amp; Sc., Statistics and Political Science</h3><div class="org">McGill University</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <!-- EDIT: skills and where you used them are in SKILLS in the script at the bottom -->
+    <section id="skills" style="padding-top: 10px;">
+      <div class="wrap">
+        <div class="head reveal"><h2>What I bring</h2><span class="hand">by the numbers</span></div>
+        <div class="card skillcard">
+          <div class="chart-head">
+            <h3>Skills, by how many places I've used them</h3>
+            <span>Hover over or tap a skill to see where.</span>
+          </div>
+          <div class="skills" id="skillsChart" role="list"></div>
+          <div class="skill-detail" id="skillDetail" aria-live="polite">Hover over or tap a skill to see where I've used it.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" style="padding-top: 10px;">
+      <div class="wrap">
+        <div class="head reveal"><h2>Things I've worked on</h2></div>
+        <div class="grid3 reveal">
+          <div class="card proj" style="--bg: var(--plum); --fg: var(--paper)">
+            <span class="tag">Policy · Research</span>
+            <h3>Youth policy at the UN</h3>
+            <p>With the McGill Youth Advisory Delegation, I researched and wrote youth-perspective policy on everything from digital literacy and technology to health care and disaster risk reduction, and helped write and edit the written statements and oral interventions we delivered at the United Nations.</p>
+          </div>
+          <div class="card proj" style="--bg: var(--sun)">
+            <span class="tag">Leadership · Events</span>
+            <h3>McMUN</h3>
+            <p>Behind the scenes at McGill's Model United Nations conference, I helped lead teams of 20 across strategic communications, event planning and sponsorships to bring the conference together.</p>
+          </div>
+          <!-- EDIT: replace when your data project is done -->
+          <div class="card proj soon">
+            <span class="tag">In progress</span>
+            <h3>A product project</h3>
+            <p>I'm picking a real problem, building something small to fix it, and seeing if it actually helps. Write-up coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOBBIES ===================== -->
+    <section id="life" style="padding-top: 10px;">
+      <div class="wrap">
+        <div class="head reveal"><h2>Off the clock</h2><span class="hand">the fun part</span></div>
+        <div class="h-grid reveal">
+
+          <div class="card hob travel" id="travelCard" style="--bg: var(--cobalt); --fg: var(--paper)">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                <path class="route" d="M15 100 Q 70 10 120 60 T 190 22" fill="none" stroke="#FBF3DC" stroke-width="3"/>
+                <circle cx="15" cy="100" r="7" fill="#F6A5B4" stroke="#4A2E22" stroke-width="2"/>
+                <circle cx="92" cy="40" r="5" fill="#e27d92" stroke="#4A2E22" stroke-width="2"/>
+                <g class="plane"><path d="M160 14 l28 10 -28 10 4 -10z" fill="#FBF3DC" stroke="#4A2E22" stroke-width="2" stroke-linejoin="round"/></g>
+              </svg>
+              <h3>Travelling</h3>
+              <!-- EDIT: your real number + next destination -->
+              <div class="big"><span class="count" data-to="25" data-dec="0">25</span><small>countries &amp; counting</small></div>
+              <div class="next">Next on my list: <span>Vietnam</span></div>
+              <button class="map-toggle" id="mapToggle" aria-expanded="false">see where I've been ↓</button>
+          </div>
+
+          <div class="card hob" style="--bg: var(--sun)">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                <path class="steam" d="M85 36 q-8 -12 0 -22 q8 -10 0 -20" fill="none" stroke="#4A2E22" stroke-width="3" stroke-linecap="round"/>
+                <path class="steam two" d="M115 36 q-8 -12 0 -22 q8 -10 0 -20" fill="none" stroke="#4A2E22" stroke-width="3" stroke-linecap="round"/>
+                <path d="M40 54 h120 a60 55 0 0 1 -120 0z" fill="#FBF3DC" stroke="#4A2E22" stroke-width="2.5"/>
+                <line x1="125" y1="14" x2="165" y2="52" stroke="#4A2E22" stroke-width="3" stroke-linecap="round"/>
+                <line x1="138" y1="10" x2="172" y2="48" stroke="#4A2E22" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <h3>Food</h3>
+              <p>Certified biggest foodie. I'm always trying new recipes and cuisines at home, but I love a good restaurant, café or bar just as much.</p>
+              <button class="mini-btn" id="foodToggle" aria-expanded="false" style="margin-top:auto">what are you craving? ↓</button>
+          </div>
+
+          <div class="card hob" style="--bg: var(--plum); --fg: var(--paper)">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                <path d="M10 95 C 50 95, 50 35, 100 35 S 150 85, 190 55" fill="none" stroke="#4A2E22" stroke-width="3" stroke-linecap="round"/>
+                <path class="route" d="M10 95 C 50 95, 50 35, 100 35 S 150 85, 190 55" fill="none" stroke="#FBF3DC" stroke-width="3"/>
+                <circle cx="190" cy="55" r="8" fill="#e27d92" stroke="#4A2E22" stroke-width="2"/>
+              </svg>
+              <h3>Running</h3>
+              <div class="big"><span class="count" data-to="42.2" data-dec="1">42.2</span><small>km: my first full marathon</small></div>
+              <div class="next">Next goal: <span>another World Marathon Major, in the next 2–3 years (probably)</span></div>
+          </div>
+
+          <div class="card hob" style="--bg: var(--teal)">
+              <svg viewBox="0 0 200 120" aria-hidden="true">
+                <g class="vinyl">
+                  <circle cx="60" cy="60" r="54" fill="#4A2E22"/>
+                  <circle cx="60" cy="60" r="38" fill="none" stroke="#6b4a3c" stroke-width="2"/>
+                  <circle cx="60" cy="60" r="26" fill="none" stroke="#6b4a3c" stroke-width="2"/>
+                  <circle cx="60" cy="60" r="15" fill="#e27d92"/>
+                  <circle cx="60" cy="60" r="3" fill="#4A2E22"/>
+                </g>
+                <path d="M140 26 v55 a12 10 0 1 1 -6 -9 V36 l40 -10 v45 a12 10 0 1 1 -6 -9 V18z" fill="#4A2E22"/>
+              </svg>
+              <h3>Music</h3>
+              <p>On repeat right now: Olivia Rodrigo's <i>you seem pretty sad for a girl so in love</i>.</p>
+              <div class="next">Go-to lock-in set: <span>Fred again.. live from a rooftop</span></div>
+              <button class="mini-btn" id="setToggle" aria-expanded="false">press play ▶</button>
+          </div>
+
+        </div>
+
+        <!-- FOOD PANEL: your spots are listed in the script at the bottom (CRAVINGS) -->
+        <div id="foodwrap" class="panelwrap"><div>
+          <div class="card foodcard">
+            <div class="map-top"><h3>What are you craving?</h3><span>my Montréal go-tos, pick one</span></div>
+            <div class="food-grid">
+              <div>
+                <div class="chips" id="cravingChips"></div>
+                <div class="pick" id="cravingPick"></div>
+              </div>
+              <div class="stay-in">
+                <h4>Staying in instead?</h4>
+                <p>Let the wheel decide what I'm cooking next.</p>
+                <div class="cuisine" id="cuisineOut">What should I cook next?</div>
+                <button class="mini-btn" id="cuisineBtn">spin the cuisine wheel ↻</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+
+        <!-- TRAVEL MAP: list your countries in VISITED in the script at the bottom -->
+        <div id="mapwrap"><div>
+        <div class="card mapcard" id="mapcard">
+          <div class="map-top">
+            <h3>Where I've been</h3>
+            <span>hover over a country</span>
+          </div>
+          <div id="map"><div class="msg">Loading map…</div><div class="tip" id="tip"></div></div>
+          <div class="legend"><span><i style="background: var(--teal)"></i>been there</span><span><i style="background: #6b4a3c"></i>not yet</span></div>
+          <div class="places" id="places"></div>
+        </div>
+        </div></div>
+
+        <!-- MUSIC PANEL: Fred again.. rooftop set -->
+        <div id="setwrap" class="panelwrap"><div>
+          <div class="card setcard">
+            <div class="map-top"><h3>My lock-in set</h3><span>Fred again.. live, on a rooftop</span></div>
+            <div class="video"><iframe id="setFrame" title="Fred again.. rooftop live set" data-src="https://www.youtube-nocookie.com/embed/6MAzUT1YhWE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <a href="https://www.youtube.com/watch?v=6MAzUT1YhWE" target="_blank" rel="noopener">open on YouTube ↗</a>
+          </div>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== ODDS ===================== -->
+  <section id="odds" style="padding-top: 10px;">
+    <div class="wrap">
+      <div class="head reveal"><h2>What are the odds we'd get along?</h2><span class="hand">very scientific</span></div>
+      <div class="card oddscard">
+        <div class="odds-grid">
+          <div>
+            <p class="odds-intro">Answer a few questions. My stats degree will handle the rest.</p>
+            <div class="qs" id="oddsQs"></div>
+          </div>
+          <div class="odds-result">
+            <div class="odds-label">Probability we'd get along</div>
+            <div class="odds-num"><span id="oddsNum">50</span>%</div>
+            <div class="odds-meter"><div id="oddsBar"></div></div>
+            <div class="odds-verdict" id="oddsVerdict">Answer the questions to find out.</div>
+            <div class="odds-fine">Accurate to within ±3 percentage points, 19 times out of 20.*</div>
+            <div class="odds-fine">*Not accurate at all.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" style="padding: 0 0 20px;">
+    <div class="contact-box reveal">
+      <h2>Say hi!</h2>
+      <p>I'm looking for new-grad roles in consulting, product and analytics. Or if you just want to swap restaurant recs, I'm in for that too.</p>
+      <div class="btns">
+        <!-- EDIT: your real email + LinkedIn -->
+        <button class="btn dark" id="copyEmail">copy my email ✉</button>
+        <a class="btn light" href="https://www.linkedin.com/in/your-profile">linkedin ↗</a>
+        <a class="btn light" href="resume.pdf">resume ↗</a>
+      </div>
+      <div class="sign">— Judy</div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast">Email copied! Talk soon :)</div>
+  <footer>Made in Toronto · © 2026 Judy Zeng</footer>
+
+  <!-- Each piece of text and every card slides up and comes into focus as you scroll -->
+  <script>
+    const items = document.querySelectorAll(
+      '.hero-grid > .reveal > *, .head, .about > div > p, .langs, .now, .fact, .job, .skillcard, .proj, .hob, .oddscard, .contact-box > *'
+    );
+    items.forEach(el => {
+      el.classList.add('r');
+      // stagger siblings so they appear one after another
+      const sibs = [...el.parentNode.children].filter(c => c.matches('.r, .head, p, .now, .job, .proj, .hob, h1, h2, span, div, a'));
+      el.style.transitionDelay = (Math.min(sibs.indexOf(el), 5) * 0.08) + 's';
+    });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+        setTimeout(() => { e.target.style.transitionDelay = '0s'; }, 1600);
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(el => io.observe(el));
+  </script>
+
+
+  <!-- ===================== YOUR SETTINGS: edit these lists ===================== -->
+  <script>
+    // EDIT: your real email
+    const EMAIL = "you@example.com";
+
+    // EDIT: words that rotate in the intro
+    const ROTATE = ["strategy", "product", "technology", "people", "policy"];
+
+    // EDIT: swap in your own favourite facts
+    const FACTS = [
+      "Africa is the only continent that sits in all four hemispheres.",
+      "Canada has the longest coastline of any country in the world.",
+      "Thanks to its overseas territories, France covers more time zones than any other country.",
+      "Australia is wider than the Moon.",
+      "Lake Baikal in Russia holds roughly a fifth of the world's unfrozen fresh surface water.",
+      "Istanbul is split between two continents, Europe and Asia.",
+      "Russia stretches across 11 time zones.",
+      "In a room of just 23 people, there's a better than 50% chance that two of them share a birthday.",
+      "Octopuses have three hearts.",
+      "Botanically speaking, bananas are berries, but strawberries aren't.",
+      "A day on Venus is longer than its year.",
+      "Wombats produce cube-shaped poop.",
+      "Sharks have been around longer than trees.",
+      "Oxford University is older than the Aztec Empire.",
+      "Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid.",
+      "A group of flamingos is called a flamboyance.",
+      "Scotland's national animal is the unicorn.",
+      "Sea otters hold hands while they sleep so they don't drift apart.",
+      "The shortest war in history, between Britain and Zanzibar in 1896, lasted under an hour.",
+      "Montréal-style bagels are boiled in honey-sweetened water before they go in a wood-fired oven.",
+      "There are more possible games of chess than atoms in the observable universe."
+    ];
+
+    // EDIT: places you've visited, grouped by region
+    const PLACES = {
+      "Asia": ["China", "Hong Kong", "Japan", "Singapore"],
+      "Europe": ["Austria", "Belgium", "Czechia", "Denmark", "France", "Germany", "Hungary", "Ireland", "Italy",
+                 "Monaco", "Netherlands", "Portugal", "Slovakia", "Spain", "Switzerland", "United Kingdom", "Vatican City"],
+      "North America & Caribbean": ["Bahamas", "Canada", "Cuba", "Mexico", "United States of America"]
+    };
+    // EDIT: your Montréal go-tos. Fill in the spot, neighbourhood and one line on why.
+    const CRAVINGS = [
+      { label: "Ramen",      spot: "Yokato Yokabai Ramen",  hood: "Little Portugal",    why: "The best noodles in the city." },
+      { label: "Bagels",     spot: "Fairmount Bagel",       hood: "Mile End",           why: "Nothing beats a fresh, warm bagel." },
+      { label: "Brunch",     spot: "September Café",        hood: "Little Burgundy",    why: "Always crowded, but worth the hype." },
+      { label: "Thai",       spot: "Pichai",                hood: "La Petite-Patrie",   why: "My absolute favourite restaurant." },
+      { label: "Pasta",      spot: "Pasta Pooks",           hood: "Mile-Ex",            why: "The freshest pasta you can get." },
+      { label: "Cheap eats", spot: "Grillade Portugalia",   hood: "The Plateau",        why: "The best Portuguese chicken sandwiches." },
+      { label: "Dessert",    spot: "Kem Coba",              hood: "Mile End",           why: "Unique soft-serve flavours, all summer long." },
+      { label: "Cocktails",  spot: "Atwater Cocktail Club", hood: "Saint-Henri",        why: "The coolest cocktails in town." }
+    ];
+
+    // EDIT: skills, and the places you've used each one
+    const SKILLS = [
+      { name: "Stakeholder communication",      where: ["SAP: presenting findings and recommendations to clients", "CIBC: working across cross-functional teams", "MYAD: writing and editing statements for the UN", "McMUN: strategic communications"] },
+      { name: "Project & delivery management",  where: ["SAP: keeping client implementations on track", "CIBC: tracking data migration and modernization projects", "McMUN: planning the conference"] },
+      { name: "Data analysis & reporting",      where: ["SAP: financial, resource and delivery data", "CIBC: reporting tables and analytical tools", "McGill: B.A. & Sc. in Statistics"] },
+      { name: "Leadership",                     where: ["SAP: leading the Montreal Intern Committee", "McMUN: helping lead teams of 20"] },
+      { name: "Event planning & sponsorships",  where: ["SAP: intern socials, networking events and lunch-and-learns", "McMUN: event planning and sponsorships"] },
+      { name: "Policy research & writing",      where: ["MYAD: youth policy presented at the UN", "McGill: political science"] },
+      { name: "SQL & databases",                where: ["CIBC: maintaining SQL databases for Global Derivatives Technology"] },
+      { name: "Process automation",             where: ["SAP: automating everyday reporting work"] },
+      { name: "Compliance & access management", where: ["CIBC: quarterly access reviews for 100+ users"] }
+    ];
+
+    // EDIT: questions for the "odds we'd get along" calculator
+    const ODDS_QS = [
+      "Do you have strong opinions about frozen yogurt?",
+      "Have you ever planned a trip around food?",
+      "Would you do a fun workout class with me?",
+      "Do you love playing daily puzzles?",
+      "Do you find a really good spreadsheet kind of beautiful?",
+      "Up for talking strategy, product or policy over coffee?"
+    ];
+
+    // EDIT: languages you speak
+    const LANGS = [
+      { tab: "English", code: "en", level: "Fluent",
+        say: "Hi, I'm Judy! English is home base, but I'll happily try ordering in whatever language the menu is in.", sub: "" },
+      { tab: "Français", code: "fr", level: "Un peu",
+        say: "Salut ! Moi, c'est Judy. Je parle un peu français, alors soyez indulgents avec moi !",
+        sub: "Hi! I'm Judy. I speak a bit of French, so go easy on me!" },
+      { tab: "中文", code: "zh", level: "Conversational",
+        say: "你好！我叫曾雨荷，很高兴认识你！",
+        sub: "Nǐ hǎo! Wǒ jiào Zēng Yǔhé, hěn gāoxìng rènshi nǐ! (Hi! My name is Zeng Yuhe. Nice to meet you!)" }
+    ];
+
+    // EDIT: cuisines for the wheel
+    const CUISINES = ["Japanese", "Sichuan", "Cantonese dim sum", "Korean", "Thai", "Vietnamese",
+                      "Indian", "Lebanese", "Ethiopian", "Mexican", "Peruvian", "Italian",
+                      "Portuguese", "Greek", "French", "Moroccan"];
+
+    // Places too small to see on a world map get a dot instead: [longitude, latitude].
+    // The ones you've visited (in PLACES above) show up in pistachio; the rest show as faint dots.
+    const PINS = {
+      "Hong Kong": [114.17, 22.32], "Macau": [113.54, 22.19], "Singapore": [103.82, 1.35], "Bahrain": [50.58, 26.22],
+      "Maldives": [73.51, 4.18], "Monaco": [7.42, 43.74], "Vatican City": [12.45, 41.9], "San Marino": [12.45, 43.94],
+      "Liechtenstein": [9.52, 47.14], "Andorra": [1.52, 42.51], "Malta": [14.51, 35.9],
+      "Cape Verde": [-23.51, 14.93], "Comoros": [43.25, -11.7], "Seychelles": [55.45, -4.62], "Mauritius": [57.5, -20.16],
+      "São Tomé and Príncipe": [6.73, 0.34],
+      "Tuvalu": [179.2, -8.52], "Kiribati": [173.0, 1.42], "Micronesia": [158.16, 6.92], "Marshall Islands": [171.38, 7.09],
+      "Nauru": [166.93, -0.52], "Palau": [134.48, 7.5], "Solomon Islands": [159.95, -9.43], "Vanuatu": [168.32, -17.73],
+      "Samoa": [-171.76, -13.83], "Tonga": [-175.2, -21.14], "Fiji": [178.44, -18.14],
+      "Antigua and Barbuda": [-61.85, 17.12], "Barbados": [-59.6, 13.1], "Dominica": [-61.37, 15.3], "Grenada": [-61.68, 12.06],
+      "Saint Kitts and Nevis": [-62.72, 17.3], "Saint Lucia": [-60.98, 13.91], "Saint Vincent and the Grenadines": [-61.2, 13.16],
+      "Trinidad and Tobago": [-61.22, 10.65], "Bahamas": [-77.35, 25.05]
+    };
+  </script>
+
+  <!-- ===================== INTERACTIONS ===================== -->
+  <script>
+    // rotating word
+    (() => {
+      const el = document.getElementById('rot'); let i = 0;
+      setInterval(() => {
+        el.classList.add('out');
+        setTimeout(() => { i = (i + 1) % ROTATE.length; el.textContent = ROTATE[i]; el.classList.remove('out'); }, 350);
+      }, 2200);
+    })();
+
+    // fact generator
+    (() => {
+      const text = document.getElementById('factText'); let last = -1;
+      document.getElementById('factBtn').onclick = () => {
+        let i; do { i = Math.floor(Math.random() * FACTS.length); } while (i === last && FACTS.length > 1);
+        last = i; text.style.opacity = 0;
+        setTimeout(() => { text.textContent = FACTS[i]; text.style.opacity = 1; }, 200);
+      };
+    })();
+
+    // counting numbers
+    (() => {
+      const io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (!e.isIntersecting) return; io.unobserve(e.target);
+        const el = e.target, to = parseFloat(el.dataset.to), dec = +el.dataset.dec, t0 = performance.now();
+        const step = now => {
+          const p = Math.min((now - t0) / 1400, 1), eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (to * eased).toFixed(dec);
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }), { threshold: 0.6 });
+      document.querySelectorAll('.count').forEach(el => { el.textContent = (0).toFixed(+el.dataset.dec); io.observe(el); });
+    })();
+
+
+    // music panel (video only loads when opened)
+    (() => {
+      const wrap = document.getElementById('setwrap'), btn = document.getElementById('setToggle'), frame = document.getElementById('setFrame');
+      const toggle = () => {
+        const open = !wrap.classList.contains('open');
+        wrap.classList.toggle('open', open);
+        btn.textContent = open ? 'close ✕' : 'press play ▶';
+        btn.setAttribute('aria-expanded', open);
+        if (open) {
+          if (window.closeMap) window.closeMap();
+          if (window.closeFood) window.closeFood();
+          if (!frame.src) frame.src = frame.dataset.src;
+          setTimeout(() => wrap.scrollIntoView({ behavior: 'smooth', block: 'center' }), 250);
+        } else {
+          frame.removeAttribute('src');   // stops the video when closed
+        }
+      };
+      btn.onclick = toggle;
+      window.closeSet = () => { if (wrap.classList.contains('open')) toggle(); };
+    })();
+
+    // language tabs (cycle on their own until someone clicks)
+    (() => {
+      const tabs = document.getElementById('langTabs'), body = document.getElementById('langBody');
+      let i = 0, timer;
+      const show = n => {
+        i = n;
+        tabs.querySelectorAll('button').forEach((b, k) => { b.classList.toggle('on', k === n); b.setAttribute('aria-selected', k === n); });
+        body.style.opacity = 0;
+        setTimeout(() => {
+          const L = LANGS[n];
+          body.innerHTML = `<div class="say" lang="${L.code}">${L.say}</div>` +
+                           (L.sub ? `<div class="sub">${L.sub}</div>` : '') + `<span class="lvl">${L.level}</span>`;
+          body.style.opacity = 1;
+        }, 150);
+      };
+      LANGS.forEach((L, n) => {
+        const b = document.createElement('button'); b.textContent = L.tab; b.setAttribute('role', 'tab');
+        b.onclick = () => { clearInterval(timer); show(n); };
+        tabs.appendChild(b);
+      });
+      show(0);
+      timer = setInterval(() => show((i + 1) % LANGS.length), 4000);
+    })();
+
+    // skills chart
+    (() => {
+      const chart = document.getElementById('skillsChart'), detail = document.getElementById('skillDetail');
+      const MAX = 4;
+      const sorted = [...SKILLS].sort((a, b) => b.where.length - a.where.length);
+      const show = (s, row) => {
+        chart.querySelectorAll('.skill').forEach(r => r.classList.remove('on'));
+        row.classList.add('on');
+        detail.innerHTML = `<b>${s.name}</b> · used in ${s.where.length} ${s.where.length === 1 ? 'place' : 'places'}` +
+                           `<ul>${s.where.map(w => `<li>${w}</li>`).join('')}</ul>`;
+      };
+      sorted.forEach(s => {
+        const row = document.createElement('button');
+        row.className = 'skill'; row.setAttribute('role', 'listitem');
+        row.setAttribute('aria-label', `${s.name}: used in ${s.where.length} places`);
+        const pct = Math.min(s.where.length / MAX, 1) * 100;
+        row.innerHTML = `<span>${s.name}</span><span class="track"><span class="bar" data-w="${pct}"></span>` +
+                        `<span class="val" data-l="${pct}" style="left:6px">${s.where.length}</span></span>`;
+        row.addEventListener('mouseenter', () => show(s, row));
+        row.addEventListener('focus', () => show(s, row));
+        row.addEventListener('click', () => show(s, row));
+        chart.appendChild(row);
+      });
+      const axis = document.createElement('div'); axis.className = 'axis';
+      axis.innerHTML = '<span></span><div>' + [0,1,2,3,4].map(n => `<span>${n}</span>`).join('') + '</div>';
+      chart.after(axis);
+      const t = document.createElement('div'); t.className = 'axis-title'; t.textContent = 'number of places';
+      axis.after(t);
+      // bars grow when the chart scrolls into view
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return; io.disconnect();
+        chart.querySelectorAll('.bar').forEach(b => b.style.width = b.dataset.w + '%');
+        chart.querySelectorAll('.val').forEach(v => v.style.left = `calc(${v.dataset.l}% + 8px)`);
+      }), { threshold: 0.3 });
+      io.observe(chart);
+    })();
+
+    // odds we'd get along
+    (() => {
+      const box = document.getElementById('oddsQs'), num = document.getElementById('oddsNum');
+      const bar = document.getElementById('oddsBar'), verdict = document.getElementById('oddsVerdict');
+      const answers = ODDS_QS.map(() => null);
+      let shown = 50;
+      const VERDICTS = [
+        [0,  "Statistically significant chance we'd still have a great chat."],
+        [60, "Promising. Let's gather more data over coffee."],
+        [75, "Strong correlation. We should probably talk."],
+        [88, "p < 0.05. We'd definitely get along."],
+        [96, "Basically a sure thing. Nobody's 100%, but you're close."]
+      ];
+      const update = () => {
+        const answered = answers.filter(a => a !== null).length;
+        const yes = answers.filter(a => a === true).length;
+        const target = answered === 0 ? 50 : Math.round(55 + (yes / ODDS_QS.length) * 42);   // tops out at 97%
+        const from = shown, t0 = performance.now();
+        const step = now => {
+          const p = Math.min((now - t0) / 500, 1);
+          shown = Math.round(from + (target - from) * p); num.textContent = shown;
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        bar.style.width = target + '%';
+        verdict.textContent = answered === 0 ? 'Answer the questions to find out.'
+          : VERDICTS.filter(([min]) => target >= min).pop()[1];
+      };
+      ODDS_QS.forEach((q, i) => {
+        const row = document.createElement('div'); row.className = 'q';
+        row.innerHTML = `<span>${q}</span><span class="yn"><button>yes</button><button>no</button></span>`;
+        const [y, n] = row.querySelectorAll('button');
+        const set = v => { answers[i] = v; y.classList.toggle('on', v === true); n.classList.toggle('on', v === false); update(); };
+        y.onclick = () => set(true); n.onclick = () => set(false);
+        box.appendChild(row);
+      });
+    })();
+
+    // craving guide panel
+    (() => {
+      const wrap = document.getElementById('foodwrap'), btn = document.getElementById('foodToggle');
+      const chips = document.getElementById('cravingChips'), pick = document.getElementById('cravingPick');
+      const showPick = (c, b) => {
+        chips.querySelectorAll('button').forEach(x => x.classList.remove('on')); b.classList.add('on');
+        pick.style.opacity = 0;
+        setTimeout(() => {
+          pick.innerHTML = `<div class="num">${String(CRAVINGS.indexOf(c) + 1).padStart(2, '0')}</div><div><div class="hood">${c.label} · ${c.hood}</div>` +
+                           `<div class="where">${c.spot}</div><div class="why">${c.why}</div></div>`;
+          pick.style.opacity = 1;
+        }, 150);
+      };
+      CRAVINGS.forEach((c, i) => {
+        const b = document.createElement('button'); b.textContent = c.label;
+        b.onclick = () => showPick(c, b); chips.appendChild(b);
+        if (i === 0) showPick(c, b);
+      });
+      const toggle = () => {
+        const open = !wrap.classList.contains('open');
+        wrap.classList.toggle('open', open);
+        btn.textContent = open ? 'close ✕' : 'what are you craving? ↓';
+        btn.setAttribute('aria-expanded', open);
+        if (open) {
+          if (window.closeMap) window.closeMap();
+          if (window.closeSet) window.closeSet();
+          setTimeout(() => wrap.scrollIntoView({ behavior: 'smooth', block: 'center' }), 250);
+        }
+      };
+      btn.onclick = toggle;
+      window.closeFood = () => { if (wrap.classList.contains('open')) toggle(); };
+    })();
+
+    // cuisine wheel
+    (() => {
+      const out = document.getElementById('cuisineOut'), btn = document.getElementById('cuisineBtn');
+      let busy = false;
+      btn.onclick = () => {
+        if (busy) return; busy = true; out.classList.add('spinning');
+        let n = 0, delay = 60;
+        const tick = () => {
+          out.textContent = CUISINES[Math.floor(Math.random() * CUISINES.length)];
+          if (++n < 14) { delay *= 1.15; setTimeout(tick, delay); }
+          else { out.textContent = 'Next up: ' + out.textContent; out.classList.remove('spinning'); busy = false; }
+        };
+        tick();
+      };
+    })();
+
+
+
+    // lotus rain mode (click "Judy." in the intro)
+    (() => {
+      const btn = document.getElementById('nameBtn'), canvas = document.getElementById('rain'), ctx = canvas.getContext('2d');
+      const note = document.getElementById('rainNote');
+      const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const PETALS = ['#F6A5B4', '#f9c4cf', '#fde3e8', '#e27d92'];
+      let on = false, drops = [], petals = [], raf = null, noteTimer;
+      const resize = () => { canvas.width = innerWidth * devicePixelRatio; canvas.height = innerHeight * devicePixelRatio; };
+      const newDrop = top => ({ x: Math.random() * (innerWidth + 200) - 100, y: top ? Math.random() * innerHeight : -30,
+                                len: 12 + Math.random() * 14, v: 9 + Math.random() * 6 });
+      const newPetal = top => ({ x: Math.random() * innerWidth, y: top ? Math.random() * innerHeight * 0.6 - 60 : -30,
+                                 s: 8 + Math.random() * 9, r: Math.random() * 6, vr: (Math.random() - .5) * .04,
+                                 vy: .6 + Math.random() * .9, sway: Math.random() * 6, c: PETALS[Math.floor(Math.random() * PETALS.length)] });
+      const drawPetal = p => {
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+        ctx.beginPath(); ctx.moveTo(0, -p.s);
+        ctx.quadraticCurveTo(p.s * .75, -p.s * .2, 0, p.s);
+        ctx.quadraticCurveTo(-p.s * .75, -p.s * .2, 0, -p.s);
+        ctx.fillStyle = p.c; ctx.globalAlpha = .9; ctx.fill();
+        ctx.globalAlpha = .5; ctx.strokeStyle = '#e27d92'; ctx.lineWidth = .8;
+        ctx.beginPath(); ctx.moveTo(0, -p.s * .7); ctx.lineTo(0, p.s * .7); ctx.stroke();
+        ctx.restore();
+      };
+      const loop = t => {
+        ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        ctx.strokeStyle = 'rgba(105,125,150,.35)'; ctx.lineWidth = 1.2; ctx.lineCap = 'round';
+        drops.forEach(d => {
+          d.y += d.v; d.x += d.v * .12;
+          ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(d.x - d.len * .12, d.y - d.len); ctx.stroke();
+          if (d.y - d.len > innerHeight) Object.assign(d, newDrop(false));
+        });
+        petals.forEach(p => {
+          p.y += p.vy; p.r += p.vr; p.x += Math.sin(t / 900 + p.sway) * .6;
+          drawPetal(p);
+          if (p.y > innerHeight + 30) Object.assign(p, newPetal(false));
+        });
+        raf = requestAnimationFrame(loop);
+      };
+      const set = val => {
+        on = val; document.body.classList.toggle('rain', on);
+        clearTimeout(noteTimer);
+        if (on) {
+          if (document.body.classList.contains('party')) document.getElementById('partyBtn').click();
+          note.classList.add('show'); noteTimer = setTimeout(() => note.classList.remove('show'), 5000);
+          if (!calm) {
+            resize();
+            drops = Array.from({ length: Math.round(innerWidth / 9) }, () => newDrop(true));
+            petals = Array.from({ length: Math.round(innerWidth / 70) }, () => newPetal(true));
+            cancelAnimationFrame(raf); raf = requestAnimationFrame(loop);
+          }
+        } else {
+          note.classList.remove('show'); cancelAnimationFrame(raf);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      };
+      btn.addEventListener('click', () => set(!on));
+      btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(!on); } });
+      window.stopRain = () => { if (on) set(false); };
+      addEventListener('resize', () => { if (on) resize(); });
+    })();
+
+    // party mode
+    (() => {
+      const btn = document.getElementById('partyBtn'), layer = document.getElementById('partyLayer');
+      const canvas = document.getElementById('confetti'), ctx = canvas.getContext('2d');
+      const COLORS = ['#BFD8AF', '#F6A5B4', '#e27d92', '#6e3a52', '#FBF3DC', '#4A2E22'];
+      const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let on = false, pieces = [], raf = null;
+
+      // bunting: two strings of flags drooping across the top
+      const buildBunting = () => {
+        layer.innerHTML = '';
+        const W = layer.clientWidth || innerWidth;
+        [[78, 46, 0], [104, 70, 1]].forEach(([top, sag, k]) => {
+          const g = document.createElement('div'); g.className = 'garland'; g.style.top = top + 'px';
+          g.innerHTML = `<svg viewBox="0 0 100 120" preserveAspectRatio="none"><path d="M0 0 Q 50 ${sag * 2} 100 0" fill="none" stroke="#4A2E22" stroke-width="0.25" vector-effect="non-scaling-stroke" style="stroke-width:2px"/></svg>`;
+          const n = Math.max(10, Math.floor(W / 46));
+          for (let i = 0; i <= n; i++) {
+            const t = i / n, f = document.createElement('div');
+            f.className = 'flag';
+            f.style.left = (t * 100) + '%';
+            f.style.top = (sag * 4 * t * (1 - t)) + 'px';
+            f.style.marginLeft = '-13px';
+            f.style.background = COLORS[(i + k * 2) % 5];
+            f.style.animationDelay = (-i * 0.2) + 's';
+            g.appendChild(f);
+          }
+          layer.appendChild(g);
+        });
+        const d = document.createElement('div'); d.className = 'disco';
+        d.innerHTML = '<div class="string"></div><div class="ball"></div>';
+        layer.appendChild(d);
+      };
+
+      const resize = () => { canvas.width = innerWidth * devicePixelRatio; canvas.height = innerHeight * devicePixelRatio; };
+      const add = (n, burst) => {
+        for (let i = 0; i < n; i++) pieces.push({
+          x: burst ? innerWidth / 2 + (Math.random() - .5) * 200 : Math.random() * innerWidth,
+          y: burst ? innerHeight * 0.35 : -20,
+          vx: burst ? (Math.random() - .5) * 14 : (Math.random() - .5) * 1.5,
+          vy: burst ? -Math.random() * 12 - 4 : Math.random() * 2 + 1.5,
+          w: 6 + Math.random() * 6, h: 8 + Math.random() * 8,
+          r: Math.random() * 6, vr: (Math.random() - .5) * .3,
+          c: COLORS[Math.floor(Math.random() * COLORS.length)]
+        });
+      };
+      const loop = () => {
+        ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        if (pieces.length < 70 && Math.random() < 0.5) add(1, false);
+        pieces.forEach(p => {
+          p.vy = Math.min(p.vy + 0.18, 4); p.vx *= 0.98;
+          p.x += p.vx + Math.sin(p.y / 30); p.y += p.vy; p.r += p.vr;
+          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+          ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.r)));
+          ctx.restore();
+        });
+        pieces = pieces.filter(p => p.y < innerHeight + 30);
+        raf = requestAnimationFrame(loop);
+      };
+
+      btn.onclick = () => {
+        on = !on;
+        if (on && window.stopRain) window.stopRain();
+        document.body.classList.toggle('party', on);
+        btn.setAttribute('aria-pressed', on);
+        btn.querySelector('.label').textContent = on ? 'okay, party over' : 'psst… click for a surprise';
+        if (on) {
+          buildBunting();
+          if (!calm) { resize(); pieces = []; add(160, true); loop(); }
+        } else {
+          cancelAnimationFrame(raf); pieces = []; ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      };
+      addEventListener('resize', () => { if (on) { buildBunting(); resize(); } });
+    })();
+
+    // reading progress + back to top
+    (() => {
+      const bar = document.getElementById('progress'), top = document.getElementById('toTop');
+      const update = () => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+        top.classList.toggle('show', scrollY > 700);
+      };
+      addEventListener('scroll', update, { passive: true }); addEventListener('resize', update); update();
+      top.onclick = () => {
+        top.classList.add('fly');
+        setTimeout(() => scrollTo({ top: 0, behavior: 'smooth' }), 250);
+        setTimeout(() => top.classList.remove('fly'), 1200);
+      };
+    })();
+
+    // copy email
+    (() => {
+      const toast = document.getElementById('toast');
+      document.getElementById('copyEmail').onclick = async () => {
+        try { await navigator.clipboard.writeText(EMAIL); toast.textContent = "Email copied! Talk soon :)"; }
+        catch (err) { toast.textContent = EMAIL; }
+        toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2400);
+      };
+    })();
+
+    // dark mode
+    (() => {
+      const btn = document.getElementById('themeBtn');
+      const set = dark => { document.body.classList.toggle('dark', dark); btn.textContent = dark ? '☀' : '☾';
+                            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {} };
+      try { if (localStorage.getItem('theme') === 'dark') set(true); } catch (e) {}
+      btn.onclick = () => set(!document.body.classList.contains('dark'));
+    })();
+  </script>
+
+  <!-- travel map (loads a free world map library the first time it's opened) -->
+  <script>
+    (() => {
+      const wrap = document.getElementById('mapwrap'), btn = document.getElementById('mapToggle');
+      const card = document.getElementById('travelCard');
+      const places = document.getElementById('places');
+      Object.entries(PLACES).forEach(([region, list]) => {
+        places.insertAdjacentHTML('beforeend', `<b>${region}</b>` + list.map(p => `<span>${p}</span>`).join(''));
+      });
+      let loaded = false;
+      const toggle = () => {
+        const open = !wrap.classList.contains('open');
+        wrap.classList.toggle('open', open);
+        btn.textContent = open ? "close the map ↑" : "see where I've been ↓";
+        btn.setAttribute('aria-expanded', open);
+        if (open) {
+          if (window.closeSet) window.closeSet();
+          if (window.closeFood) window.closeFood();
+          if (!loaded) { loaded = true; drawMap(); }
+          setTimeout(() => wrap.scrollIntoView({ behavior: 'smooth', block: 'center' }), 250);
+        }
+      };
+      card.addEventListener('click', toggle);
+      window.closeMap = () => { if (wrap.classList.contains('open')) toggle(); };
+
+      const load = src => new Promise((res, rej) => { const t = document.createElement('script'); t.src = src; t.onload = res; t.onerror = rej; document.head.appendChild(t); });
+
+      async function drawMap() {
+        const box = document.getElementById('map'), tip = document.getElementById('tip');
+        try {
+          await load('https://cdn.jsdelivr.net/npm/d3@7');
+          await load('https://cdn.jsdelivr.net/npm/topojson-client@3');
+          const world = await d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json');
+          const countries = topojson.feature(world, world.objects.countries).features.filter(f => f.properties.name !== 'Antarctica');
+          const W = 960, H = 480;
+          const proj = d3.geoNaturalEarth1().fitSize([W, H], { type: 'FeatureCollection', features: countries });
+          const path = d3.geoPath(proj);
+          const been = new Set(Object.values(PLACES).flat().map(n => n.toLowerCase()));
+          if (been.has('czechia')) been.add('czech republic');
+          if (been.has('united states of america')) been.add('united states');
+          box.querySelector('.msg').remove();
+          const svg = d3.select(box).insert('svg', '.tip').attr('viewBox', `0 0 ${W} ${H}`);
+          const show = (ev, name, yes) => {
+            const r = box.getBoundingClientRect();
+            tip.textContent = name + (yes ? ' ✓' : '');
+            tip.style.left = (ev.clientX - r.left) + 'px'; tip.style.top = (ev.clientY - r.top) + 'px'; tip.style.opacity = 1;
+          };
+          svg.selectAll('path').data(countries).join('path')
+            .attr('d', path)
+            .attr('class', d => been.has(d.properties.name.toLowerCase()) ? 'been' : null)
+            .on('mousemove', (ev, d) => show(ev, d.properties.name, been.has(d.properties.name.toLowerCase())))
+            .on('mouseleave', () => tip.style.opacity = 0);
+          const pins = Object.entries(PINS).sort((a, b) => been.has(a[0].toLowerCase()) - been.has(b[0].toLowerCase()));
+          svg.selectAll('circle.pin').data(pins).join('circle')
+            .attr('class', d => been.has(d[0].toLowerCase()) ? 'pin' : 'pin not')
+            .attr('r', d => been.has(d[0].toLowerCase()) ? 5 : 3)
+            .attr('cx', d => proj(d[1])[0]).attr('cy', d => proj(d[1])[1])
+            .on('mousemove', (ev, d) => show(ev, d[0], been.has(d[0].toLowerCase())))
+            .on('mouseleave', () => tip.style.opacity = 0);
+        } catch (err) {
+          box.querySelector('.msg').textContent = 'The map will appear once the site is online.';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
